@@ -1,0 +1,36 @@
+# Test your FastAPI endpoints - Groups
+
+### Send GET Request - Read All Group
+
+GET {{host}}/groups?skip=0&limit=100
+Accept: application/json
+
+### Send GET Request - Read Detail Group
+
+GET {{host}}/groups/1
+Accept: application/json
+
+### Send GET Request - Doesn't have Group
+
+GET {{host}}/groups/0
+Accept: application/json
+
+### Send POST request with json body - Create Group
+POST {{host}}/groups
+Content-Type: application/json
+
+{
+    "name": "Test"
+}
+
+### Send PUT request with json body - Update Group
+PUT {{host}}/groups/1
+Content-Type: application/json
+
+{
+    "name": "Update Test"
+}
+
+### Send DELETE request with json body - Delete Group
+DELETE {{host}}/groups/1
+Content-Type: application/json

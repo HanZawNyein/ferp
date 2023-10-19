@@ -31,7 +31,7 @@ def read_group(
     """
     item = crud_group.get(db=db, id=id)
     if not item:
-        raise HTTPException(status_code=404, detail="Item not found")
+        raise HTTPException(status_code=404, detail="Group not found")
     return item
 
 

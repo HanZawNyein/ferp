@@ -2,7 +2,7 @@ import secrets
 from typing import Any, Dict, List, Optional, Union
 
 from pydantic_settings import BaseSettings
-from pydantic import AnyHttpUrl, EmailStr, HttpUrl, PostgresDsn, validator,field_validator
+from pydantic import AnyHttpUrl, EmailStr, HttpUrl, PostgresDsn, validator, field_validator
 
 
 class Settings(BaseSettings):
@@ -23,7 +23,6 @@ class Settings(BaseSettings):
     PROJECT_NAME: str
     SQLALCHEMY_DATABASE_URI: str
 
-
     SMTP_TLS: bool = True
     SMTP_PORT: Optional[int] = None
     SMTP_HOST: Optional[str] = None
@@ -41,7 +40,7 @@ class Settings(BaseSettings):
     USERS_OPEN_REGISTRATION: bool = False
 
     class Config:
-        env_file=".env"
+        env_file = ".env"
         case_sensitive = True
 
 
