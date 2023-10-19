@@ -18,8 +18,7 @@ class GroupUpdate(GroupBase):
 
 class GroupInDBBase(GroupBase):
     id: int
-    title: str
-    owner_id: int
+    name:str
 
     class Config:
         from_attributes = True
