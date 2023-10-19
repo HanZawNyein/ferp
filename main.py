@@ -32,8 +32,3 @@ for path, apps in APPS:
 @app.get("/")
 async def root():
     return {"message": "Hello, FERP"}
-
-
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
