@@ -1,13 +1,16 @@
-from typing import List, Any
+from typing import List, Any, TypeVar
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from db.dependencies import get_db
+from ferp.db import Base
+from ferp.db.dependencies import get_db
 
 from . import schemas
 from .crud import group as crud_group
 
-router = APIRouter()
+router = APIRouter(tags=["Hello"])
+
+ModelType = TypeVar("ModelType", bound=Base)
 
 
 @router.get('/', response_model=List[schemas.Group])

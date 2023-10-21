@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String, Integer
 
-from db.base_class import Base
+from ferp.db.base_class import Base
 
 
 class Group(Base):

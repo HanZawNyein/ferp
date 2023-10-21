@@ -1,10 +1,9 @@
-from fastapi import FastAPI,Response,Request
+from fastapi import FastAPI, Response, Request
 
-from db import engine,Base,SessionLocal
+from ferp.db import engine, Base, SessionLocal
 
-from core.config import settings
-from apps import APPS
-
+from ferp.core.config import settings
+from ferp.apps import APPS
 
 Base.metadata.create_all(bind=engine)
 
@@ -12,6 +11,7 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(
     title=settings.PROJECT_NAME
 )
+
 
 @app.middleware("http")
 async def db_session_middleware(request: Request, call_next):
@@ -25,6 +25,7 @@ async def db_session_middleware(request: Request, call_next):
 
 
 # apps
+# app.include_router()
 for path, apps in APPS:
     app.mount(path, apps)
 

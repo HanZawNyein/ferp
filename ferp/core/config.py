@@ -34,6 +34,13 @@ class Settings(BaseSettings):
     EMAIL_RESET_TOKEN_EXPIRE_HOURS: int = 48
     EMAIL_TEMPLATES_DIR: str = "/app/app/email-templates/build"
     EMAILS_ENABLED: bool = False
+    addons_path: str
+
+    @field_validator("addons_path")
+    def assemble_addons_path(cls, v: Union[str, List[str]]) -> Union[List[str], str]:
+        if isinstance(v, str):
+            return [i.strip() for i in v.split(",")]
+        raise ValueError(v)
 
     FIRST_SUPERUSER: str
     FIRST_SUPERUSER_PASSWORD: str

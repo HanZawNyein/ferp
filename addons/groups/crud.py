@@ -3,7 +3,7 @@ from typing import List
 from fastapi.encoders import jsonable_encoder
 from sqlalchemy.orm import Session
 
-from db.crud import CRUDBase
+from ferp.db.crud import CRUDBase
 from .models import Group
 from .schemas import GroupCreate, GroupUpdate
 
