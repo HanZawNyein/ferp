@@ -25,9 +25,9 @@ class UserInDBBase(UserBase):
         from_attributes = True
 
 
-class Group(UserInDBBase):
+class User(UserInDBBase):
     pass
 
 
-class GroupInDB(UserInDBBase):
+class UserInDB(UserInDBBase):
     pass
