@@ -14,7 +14,7 @@ def find_apps_py_files(directory):
 
     for root, _, files in os.walk(directory):
         for filename in files:
-            if filename == 'router.py':
+            if filename == 'main.py':
                 apps_py_files.append([root.split('/')[-1], os.path.join(root, filename)])
     return apps_py_files
 
